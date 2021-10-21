@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    class Dice
+    public class Dice
     {
         #region Fields
         private Random _randomizer;

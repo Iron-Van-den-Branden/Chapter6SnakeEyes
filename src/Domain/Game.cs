@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    class Game
+    public class Game
     {
         #region Fields
         private List<int> _highscores = new List<int>();
@@ -18,7 +18,7 @@ namespace Domain
         public int Eye2 { get { return _dice2.Dots; } }
         public bool HasSnakeEyes { get { return (Eye1 == 1 && Eye2 == 1); } }
         public IReadOnlyList<int> HighScores { get { return _highscores; } }
-        private int Total { get; set; }
+        public int Total { get; set; }
 
         #endregion
         #region Constructor
