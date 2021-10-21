@@ -18,10 +18,10 @@
         <li>@score</li>
     }
 </ul>
-@if (Game.HasSnakeEyes)
+@if (_game.HasSnakeEyes)
 {
     <div class="alert alert-danger">You have lost the game! Do you want to try again?</div>
-    <button @onclick="Game.Restart">Restart</button>
+    <button @onclick="_game.Restart">Restart</button>
 }
 
 @code{
