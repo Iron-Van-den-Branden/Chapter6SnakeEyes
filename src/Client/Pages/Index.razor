@@ -8,14 +8,24 @@
 <p>
     Score: @_game.Total
 </p>
-<button @onclick="_game.Play">Play</button>
+@if (_game.HasSnakeEyes)
+{
+    <div class="alert alert-danger">You have lost the game! Do you want to try again?</div>
+    <button @onclick="_game.Restart">Restart</button>
+}
+else
+{
+    <button @onclick="_game.Play">Play</button>
+}
+
 <h3>Highscores</h3>
 <ul>
-    @foreach(int score in _game.HighScores.OrderByDescending(x => x))
-            {
-                <li>@score</li>
-            }
+    @foreach (int score in _game.HighScores.OrderByDescending(x => x))
+    {
+        <li>@score</li>
+    }
 </ul>
+
 @code{
     private Game _game = new Game();
 }
