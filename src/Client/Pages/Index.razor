@@ -1,4 +1,4 @@
-﻿@using Domain;
+﻿
 @page "/"
 <h1>Snake Eyes</h1>
 <div>
@@ -8,15 +8,8 @@
 <p>
     Score: @_game.Total
 </p>
-@if (_game.HasSnakeEyes)
-{
-    <div class="alert alert-danger">You have lost the game! Do you want to try again?</div>
-    <button @onclick="_game.Restart">Restart</button>
-}
-else
-{
-    <button @onclick="_game.Play">Play</button>
-}
+
+    <button @onclick="_game.Play" disabled="@_game.HasSnakeEyes">Play</button>
 
 <h3>Highscores</h3>
 <ul>
@@ -25,6 +18,7 @@ else
         <li>@score</li>
     }
 </ul>
+<RestartButton Game="@_game"></RestartButton>
 
 @code{
     private Game _game = new Game();

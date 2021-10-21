@@ -24,12 +24,12 @@ namespace Domain
         #region Constructor
         public Game()
         {
-            initialize();
+            Initialize();
         }
         #endregion
         #region Methods
 
-        private void initialize()
+        private void Initialize()
         {
             _dice1 = new Dice();
             _dice2 = new Dice();
@@ -49,7 +49,7 @@ namespace Domain
         }
         public void Restart()
         {
-            initialize();
+            Initialize();
 
         }
         #endregion
