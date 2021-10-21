@@ -50,7 +50,6 @@ namespace Domain
         public void Restart()
         {
             Initialize();
-
         }
         #endregion
     }
